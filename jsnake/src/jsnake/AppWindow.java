@@ -9,14 +9,14 @@ public class AppWindow extends JFrame
 	
 	private JPanel playerPanel;
 	
-
+	KeyListenerTester inputHandler = new KeyListenerTester();
 	
 	public void updatePlayer(Player player)
 	{
+		
 		playerPanel.setBounds(player.getPosition().x - player.getSize().x,
 							  player.getPosition().y - player.getSize().y,
 							  player.getSize().x, player.getSize().y);
-		
 	}
 	
 	public AppWindow()
