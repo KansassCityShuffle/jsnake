@@ -1,5 +1,6 @@
 package jsnake;
 
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -10,7 +11,7 @@ public class main {
 	
 
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{		
 		Player player = new Player();
 		player.setPosition(new Vector2D(100,50));
