@@ -2,12 +2,14 @@ package jsnake;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.io.IOException;
+
+import javax.imageio.*;  
 
 public class AppWindow extends JFrame
 {
 	
-	private JPanel playerPanel;
+	private ImagePanel playerPanel;
 	
 	KeyListenerTester inputHandler = new KeyListenerTester();
 	
@@ -19,7 +21,7 @@ public class AppWindow extends JFrame
 							  player.getSize().x, player.getSize().y);
 	}
 	
-	public AppWindow()
+	public AppWindow() throws IOException
 	{
 		setLayout(null);
 		setSize(new Dimension(800,600));
@@ -28,9 +30,11 @@ public class AppWindow extends JFrame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
 		
-		playerPanel = new JPanel();
+		Image playerTexture = ImageIO.read(getClass().getResource("fisher.png"));
+		
+		playerPanel = new ImagePanel(playerTexture);
 		playerPanel.setEnabled(true);
-		playerPanel.setBackground(Color.WHITE);
+		playerPanel.setBackground(Color.BLACK);
 		playerPanel.setVisible(true);
 		playerPanel.setBounds(400-32, 300-32, 32, 32);
 		

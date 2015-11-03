@@ -1,0 +1,20 @@
+package jsnake;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class ImagePanel extends JPanel
+{
+	private Image image;
+	
+	ImagePanel(Image image)
+	{
+        this.image = image;
+    };
+    
+    public void paintComponent(Graphics g)
+    {
+        super.paintComponent(g);
+        g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+    }
+}
